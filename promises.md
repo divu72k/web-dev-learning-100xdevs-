@@ -9,11 +9,13 @@
  - .catch(): used to call a function after the promise fails.
 
 # Function architecture:
+```
 function FUNC(...args){
   return new Promise(
     (resolve,reject)[requires atleast 1 argument]=>{
       //write the actual async function's statements/code
       })
+```
 
 - Promise's constructor takes the function we give as an argument.
 - Internally, it uses it's own functions which are resolve and reject.
@@ -31,7 +33,7 @@ function FUNC(...args){
 - Best way to call a promise is with async function.
 
 # EXAMPLE:
-
+```
 const fs=require("fs")
 function cfPromise(filepath){
   return new Promise((resolve,reject)=>{
@@ -54,3 +56,4 @@ function cfPromise(filepath){
       } catch(err){
         console.log("operation removed")
         }}
+```
