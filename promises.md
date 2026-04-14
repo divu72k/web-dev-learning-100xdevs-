@@ -1,4 +1,4 @@
- ##Promises:
+ # Promises:
  - Any async function returns a promise.
  - A promise is an object representation eventual failure or success of an async operation and it's resolving value.
  - It has 3 states:
@@ -8,7 +8,7 @@
  - .then(): used to call a function after the promise succeeds.
  - .catch(): used to call a function after the promise fails.
 
-##Function architecture:
+# Function architecture:
 function FUNC(...args){
   return new Promise(
     (resolve,reject)[requires atleast 1 argument]=>{
@@ -30,7 +30,7 @@ function FUNC(...args){
 - In async functions, we use await to perform the actions of .then().
 - Best way to call a promise is with async function.
 
-##EXAMPLE:
+# EXAMPLE:
 
 const fs=require("fs")
 function cfPromise(filepath){
