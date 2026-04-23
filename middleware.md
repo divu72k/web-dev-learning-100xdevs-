@@ -8,7 +8,8 @@
 
 ---
 ## Modifying the requests:
-`app.use(function(req, res, next) {
+`
+app.use(function(req, res, next) {
     req.name = "harkirat"
     next();
 })
@@ -21,11 +22,15 @@ app.get("/sum", function(req, res) {
     res.json({
         ans: a + b
     })
-});`
+});
+`
+
 Because of the middleware, the output will include 'harkirat' in the frontend.
+
 ---
 ## Ending the request/response cycle:
-`app.use(function(req, res, next) {
+`
+app.use(function(req, res, next) {
     res.json({
         message: "You are not allowed"
     })
@@ -39,8 +44,10 @@ app.get("/sum", function(req, res) {
     res.json({
         ans: a + b
     })
-});`
+});
+`
 no matter what the input is, the output will be 'You are not allowed'.
+
 ---
 ## Calling the next middleware function in the stack:
 `
@@ -56,15 +63,18 @@ app.get("/sum", function(req, res) {
     res.json({
         ans: a + b
     })
-});`
+});
+`
 
 - if the initialization is below a path, that path will run without the middleware.
 - we can also send the middleware as one of the inputs on the path's code:
-  `app.get("/sum", middleware, function(req, res) {
+  `
+  app.get("/sum", middleware, function(req, res) {
     const a = parseInt(req.query.a);
     const b = parseInt(req.query.b);
 
     res.json({
         ans: a + b
     })
-});`
+});
+`
